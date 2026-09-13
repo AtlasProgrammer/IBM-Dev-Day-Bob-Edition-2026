@@ -1,0 +1,6 @@
+2026-08-30T01:14:00.012Z INFO deploy revision=rel-2204 action=canary share=10%
+2026-08-30T01:14:01.104Z INFO deploy migration=online schema=reportly_204_idx
+2026-08-30T01:14:08.440Z ERROR deploy probe=/health/ready status=503 body="migrating"
+2026-08-30T01:14:08.890Z ERROR deploy probe=/health/ready status=503 body="migrating"
+2026-08-30T01:14:09.220Z WARN deploy action=rollback reason="readiness_failed" revision=rel-2204
+2026-08-30T01:14:09.880Z INFO deploy revision=rel-2203 action=restored share=100%

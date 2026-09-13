@@ -1,0 +1,18 @@
+{
+  "reportly/export/service.py": {
+    "export": "81f92a",
+    "note": "unbounded source.read() introduced here"
+  },
+  "reportly/observability.py": {
+    "log_request": "c3e118",
+    "note": "raw Authorization header forwarded to logs"
+  },
+  "reportly/release/health.py": {
+    "readiness": "e71bb2",
+    "note": "503 during migration causes canary drain"
+  },
+  "reportly/auth.py": {
+    "require_token": "a91c03",
+    "note": "bearer accepted without tenant bind"
+  }
+}

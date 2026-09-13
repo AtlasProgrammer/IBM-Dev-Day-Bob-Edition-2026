@@ -1,0 +1,13 @@
+[project]
+name = "reportly"
+version = "2.6.0"
+description = "Multi-tenant report export platform used as the ORCHESTRA sample repository"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = []
+
+[tool.orchestra]
+product = "Reportly"
+workflows = ["onboarding", "debugging", "code-review", "testing", "maintenance", "release"]
+features = ["tenants", "quotas", "feature-flags", "audit", "webhooks", "canary"]

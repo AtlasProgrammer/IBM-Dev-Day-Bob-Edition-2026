@@ -1,0 +1,5 @@
+2026-08-30T16:22:11.004Z WARN reportly.auth rid=req-t2044 tenant.assumed token_tenant=acme requested_tenant=northwind token=acme-live
+2026-08-30T16:22:11.018Z INFO reportly.audit event=export.requested actor=acme-live tenant=northwind cross_tenant=true report=rpt-northwind-payroll
+2026-08-30T16:22:11.110Z INFO reportly.export rid=req-t2044 export.started report=rpt-northwind-payroll tenant=northwind
+2026-08-30T16:22:11.440Z INFO reportly.audit event=export.completed actor=acme-live tenant=northwind cross_tenant=true bytes=184320
+2026-08-30T16:22:11.441Z INFO reportly.webhooks topic=export.completed tenant=northwind cross_tenant=true

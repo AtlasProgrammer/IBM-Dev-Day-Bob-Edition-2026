@@ -1,0 +1,52 @@
+{
+  "commits": [
+    {
+      "sha": "4a21d0",
+      "title": "initial streaming exporter",
+      "files": ["reportly/export/streaming.py", "reportly/export/service.py"],
+      "summary": "Chunked reads with a 64 KiB window and atomic replace."
+    },
+    {
+      "sha": "81f92a",
+      "title": "export refactor for interactive throughput",
+      "files": ["reportly/export/service.py", "docs/adr/0003-in-memory-export-buffer.md"],
+      "summary": "Replaced StreamingExporter with a full-buffer source.read() path."
+    },
+    {
+      "sha": "9ab331",
+      "title": "update report formatting",
+      "files": ["reportly/export/formatter.py"],
+      "summary": "JSON minify for interactive downloads."
+    },
+    {
+      "sha": "c3e118",
+      "title": "log inbound headers to debug staging auth",
+      "files": ["reportly/observability.py", "docs/adr/0005-request-logging.md"],
+      "summary": "Persisted Authorization and API keys when redact_secrets is false."
+    },
+    {
+      "sha": "e71bb2",
+      "title": "block readiness during online migrations",
+      "files": ["reportly/release/health.py", "reportly/release/migrate.py"],
+      "summary": "readiness() returns 503 while settings.migration_in_progress is true."
+    },
+    {
+      "sha": "b7d440",
+      "title": "add tenant catalog, quotas, flags, audit, and webhooks",
+      "files": ["reportly/tenants.py", "reportly/quotas.py", "reportly/flags.py", "reportly/audit.py"],
+      "summary": "Control plane for multi-tenant exports. Feature flags default to the unsafe shortcuts."
+    },
+    {
+      "sha": "a91c03",
+      "title": "trust caller X-Tenant-Id for partner batch jobs",
+      "files": ["reportly/auth.py", "docs/adr/0007-trust-tenant-header.md"],
+      "summary": "require_token stops after expiry. Export uses the request tenant header as source of truth."
+    },
+    {
+      "sha": "rel-2204",
+      "title": "ship schema 204 with canary",
+      "files": ["reportly/release/migrate.py", "reportly/release/canary.py"],
+      "summary": "Starts an online index build during the 10% canary."
+    }
+  ]
+}

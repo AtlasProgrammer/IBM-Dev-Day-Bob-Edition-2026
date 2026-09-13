@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ORCHESTRA — IBM Bob 2.0 Command Center</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">ORCHESTRA <span>IBM Bob 2.0 Command Center</span></div>
+  <div class="meta">
+    <button class="ghost" id="skillsBtn" type="button">Skills</button>
+    <div class="live"><i class="dot"></i>WORKFLOW READY</div>
+  </div>
+</header>
+<div class="shell">
+  <aside>
+    <div class="aside-label">Incidents</div>
+    <div id="incidents" class="incident-list"></div>
+    <div class="aside-label">Bob 2.0 mapping</div>
+    <div id="caps" class="caps"></div>
+    <div class="aside-label">Sample project</div>
+    <div id="project" class="project-card"></div>
+  </aside>
+  <main>
+    <section class="hero">
+      <div>
+        <div id="issueMeta" class="eyebrow">Select an incident</div>
+        <h1 id="issueTitle">Incident → verified fix</h1>
+        <p id="issueSummary" class="sub">Parallel investigation across code, logs, git, tests, and documents.</p>
+        <div id="issueTags" class="tags"></div>
+      </div>
+      <div class="hero-actions">
+        <button id="run" class="btn" type="button">Run investigation</button>
+        <button id="fixBtn" class="btn secondary" type="button" disabled>Generate fix</button>
+        <button id="valBtn" class="btn secondary" type="button" disabled>Validate fix</button>
+      </div>
+    </section>
+    <div id="phases" class="phases"></div>
+    <div id="agents" class="grid"></div>
+    <section id="root" class="panel hidden">
+      <h2>Root cause</h2>
+      <div class="root">
+        <div>
+          <h3 id="rootTitle"></h3>
+          <p id="rootText" class="sub"></p>
+          <div id="evidence" class="tags"></div>
+        </div>
+        <div class="metric">
+          <div class="status">Confidence</div>
+          <div id="confidence" class="big">—</div>
+          <div class="bar"><i id="confBar"></i></div>
+          <div id="agree" class="tiny"></div>
+        </div>
+      </div>
+    </section>
+    <section id="fix" class="panel hidden">
+      <h2>Fix plan</h2>
+      <div id="fixMeta" class="sub"></div>
+      <pre id="patch"></pre>
+    </section>
+    <section id="result" class="panel hidden">
+      <h2>Release readiness</h2>
+      <div class="grid four">
+        <div class="metric"><div class="status">Tests</div><div id="testScore" class="big">—</div><span id="testTag" class="tag">—</span></div>
+        <div class="metric"><div class="status">Review</div><div id="reviewScore" class="big">—</div><span id="reviewTag" class="tag">—</span></div>
+        <div class="metric"><div class="status">Readiness</div><div id="ready" class="big">—</div><span id="readyTag" class="tag">—</span></div>
+        <div class="metric"><div class="status">Time saved</div><div id="saved" class="big">—</div><span id="savedTag" class="tag">—</span></div>
+      </div>
+      <div class="split">
+        <pre id="summary"></pre>
+        <div>
+          <h3>Manual vs ORCHESTRA</h3>
+          <ul id="impactList" class="impact"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<div id="drawer" class="drawer hidden">
+  <div class="drawer-head">
+    <strong>Bob skill prompts</strong>
+    <button class="ghost" id="closeSkills" type="button">Close</button>
+  </div>
+  <div id="skills" class="skills"></div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
